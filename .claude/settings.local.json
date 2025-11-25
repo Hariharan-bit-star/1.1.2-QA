@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(copy \"D:\\DevSwarm\\DevSwarm\\repos\\E\\78972b61\\QA_Git\\.devswarm-temp\\259372-1-2025-11-25T20-40-36-895Z-l8craf.jpg\" \"D:\\DevSwarm\\DevSwarm\\repos\\E\\78972b61\\QA_Git\\image.png\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
