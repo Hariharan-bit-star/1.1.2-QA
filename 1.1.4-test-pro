@@ -1,0 +1,65 @@
+│ FlyingCharacter.h                                                                                                 │
+│                                                                                                                   │
+│ // FlyingCharacter.h                                                                                              │
+│ #pragma once                                                                                                      │
+│                                                                                                                   │
+│ #include "CoreMinimal.h"                                                                                          │
+│ #include "GameFramework/Character.h"                                                                              │
+│ #include "FlyingCharacter.generated.h"                                                                            │
+│                                                                                                                   │
+│ UCLASS()                                                                                                          │
+│ class AFlyingCharacter : public ACharacter                                                                        │
+│ {                                                                                                                 │
+│     GENERATED_BODY()                                                                                              │
+│                                                                                                                   │
+│ public:                                                                                                           │
+│     AFlyingCharacter();                                                                                           │
+│                                                                                                                   │
+│ protected:                                                                                                        │
+│     virtual void BeginPlay() override;                                                                            │
+│                                                                                                                   │
+│ public:                                                                                                           │
+│     virtual void Tick(float DeltaTime) override;                                                                  │
+│     virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;                 │
+│                                                                                                                   │
+│     // Flying movement functions                                                                                  │
+│     void StartFlying();                                                                                           │
+│     void StopFlying();                                                                                            │
+│     void ToggleFlying();                                                                                          │
+│                                                                                                                   │
+│     // Input handlers                                                                                             │
+│     void MoveForward(float Value);                                                                                │
+│     void MoveRight(float Value);                                                                                  │
+│     void MoveUp(float Value);                                                                                     │
+│     void LookUp(float Value);                                                                                     │
+│     void Turn(float Value);                                                                                       │
+│                                                                                                                   │
+│     // Flying properties                                                                                          │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     float FlyingSpeed;                                                                                            │
+│                                                                                                                   │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     float FlyingAcceleration;                                                                                     │
+│                                                                                                                   │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     float FlyingDeceleration;                                                                                     │
+│                                                                                                                   │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     float MaxFlyingSpeed;                                                                                         │
+│                                                                                                                   │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     float VerticalFlyingSpeed;                                                                                    │
+│                                                                                                                   │
+│     UPROPERTY(BlueprintReadOnly, Category = "Flying")                                                             │
+│     bool bIsFlying;                                                                                               │
+│                                                                                                                   │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     float MouseSensitivity;                                                                                       │
+│                                                                                                                   │
+│     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flying")                                              │
+│     bool bEnableGravityWhenNotFlying;                                                                             │
+│                                                                                                                   │
+│ private:                                                                                                          │
+│     FVector CurrentVelocity;                                                                                      │
+│     FRotator CurrentRotation;                                                                                     │
+│ };                               
